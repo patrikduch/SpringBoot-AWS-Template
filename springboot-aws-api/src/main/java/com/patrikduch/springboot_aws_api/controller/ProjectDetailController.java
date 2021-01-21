@@ -1,6 +1,6 @@
 package com.patrikduch.springboot_aws_api.controller;
 
-import com.patrikduch.springboot_aws_api_core.model.ProjectDetailDto;
+import com.patrikduch.springboot_aws_api_core.dtos.ProjectDetailDto;
 import com.patrikduch.springboot_aws_api.service.ProjectDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
