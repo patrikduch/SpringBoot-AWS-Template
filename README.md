@@ -8,4 +8,4 @@ docker build -f Dockerfile -t docker-springboot .
 
 ### Run image
 
-docker run -p 80:80  docker-springboot
+docker run -p 8080:8080  docker-springboot
