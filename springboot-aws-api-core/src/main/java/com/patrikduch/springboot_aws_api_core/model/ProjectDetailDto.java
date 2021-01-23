@@ -4,11 +4,6 @@ public class ProjectDetailDto {
 
     private int id;
 
-    public ProjectDetailDto(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     private String name;
 
 

@@ -6,6 +6,12 @@ import org.springframework.stereotype.Service;
 public class ProjectDetailService {
 
     public ProjectDetailDto getProjectDetail(){
-        return new ProjectDetailDto(1, "Project name");
+
+        var entity = new ProjectDetailDto();
+
+        entity.setId(1);
+        entity.setName("Project name");
+
+        return entity;
     }
 }
