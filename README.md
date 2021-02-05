@@ -21,3 +21,10 @@ docker run -p 8080:8080  docker-springboot
 
 ## Database
 
+
+
+
+## REST API documentation
+
+https://swagger.io/docs/specification/describing-responses/
+
