@@ -1,4 +1,4 @@
-package com.patrikduch.springboot_aws_api_core.model;
+package com.patrikduch.springboot_aws_api_core.dtos;
 
 public class ProjectDetailDto {
 

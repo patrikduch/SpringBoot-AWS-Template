@@ -1,5 +1,5 @@
 package com.patrikduch.springboot_aws_api.service;
-import com.patrikduch.springboot_aws_api_core.model.ProjectDetailDto;
+import com.patrikduch.springboot_aws_api_core.dtos.ProjectDetailDto;
 import org.springframework.stereotype.Service;
 
 @Service
