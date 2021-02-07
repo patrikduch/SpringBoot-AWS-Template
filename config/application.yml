@@ -5,8 +5,8 @@ swaggerPath: "/swagger-ui:html"
 
 production:
   server:
-    url: "http://tepsivosafetydatabasebackend-env.eba-33ehkwmz.eu-west-1.elasticbeanstalk.com"
-    name: "Production Tepsivo BE server"
+    url: "http://servername.com"
+    name: "Some server name"
 
 development:
   test: "Test"
