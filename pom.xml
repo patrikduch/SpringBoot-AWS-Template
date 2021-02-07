@@ -12,7 +12,7 @@
 
     <groupId>com.patrikduch</groupId>
     <artifactId>springboot-aws-api-template</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>springboot-aws-api-template</name>
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
@@ -20,6 +20,7 @@
     <modules>
         <module>springboot-aws-api-core</module>
         <module>springboot-aws-api</module>
+        <module>springboot-aws-api-localhost</module>
     </modules>
 
 
@@ -28,13 +29,52 @@
         <app.version>1.0.0-SNAPSHOT</app.version>
     </properties>
 
+
+    <profiles>
+        <profile>
+            <id>production</id>
+            <modules>
+                <module>springboot-aws-api-core</module>
+                <module>springboot-aws-api</module>
+            </modules>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>development</id>
+            <modules>
+                <module>springboot-aws-api-core</module>
+                <module>springboot-aws-api</module>
+                <module>springboot-aws-api-localhost</module>
+            </modules>
+        </profile>
+
+    </profiles>
+
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.patrikduch</groupId>
+                <artifactId>springboot-aws-api</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.patrikduch</groupId>
                 <artifactId>springboot-aws-api-core</artifactId>
                 <version>${app.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.patrikduch</groupId>
+                <artifactId>springboot-aws-api-localhost</artifactId>
+                <version>${app.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>

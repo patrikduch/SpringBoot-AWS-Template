@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "development",
+      "type": "com.patrikduch.springboot_aws_api_localhost.config.YamlDevelopmentConfig",
+      "sourceType": "com.patrikduch.springboot_aws_api_localhost.config.YamlDevelopmentConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "development.server",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.patrikduch.springboot_aws_api_localhost.config.YamlDevelopmentConfig"
+    }
+  ],
+  "hints": []
+}

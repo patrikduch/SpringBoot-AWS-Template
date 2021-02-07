@@ -1,0 +1,3 @@
+META-INF/spring-configuration-metadata.json
+com/patrikduch/springboot_aws_api_localhost/config/ServerConfigDevelopment.class
+com/patrikduch/springboot_aws_api_localhost/config/YamlDevelopmentConfig.class

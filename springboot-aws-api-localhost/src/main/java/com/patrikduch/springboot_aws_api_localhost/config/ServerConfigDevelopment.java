@@ -1,22 +1,20 @@
-package com.patrikduch.springboot_aws_api.configs;
+package com.patrikduch.springboot_aws_api_localhost.config;
 
-import com.patrikduch.springboot_aws_api.YamlProductionConfig;
+
 import com.patrikduch.springboot_aws_api_core.interfaces.configs.ServerConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
- * Configuration of server for production environment.
+ *  Setup of server for development environment.
  * @author Patrik Duch
  */
-@Profile("production")
 @Service
-public class ServerProductionConfig implements ServerConfig {
+@Profile("development")
+public class ServerConfigDevelopment implements ServerConfig {
 
     @Autowired
-    private YamlProductionConfig config;
-
-
+    private YamlDevelopmentConfig _config;
 
 }

@@ -9,10 +9,10 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>springboot-aws-api-core</artifactId>
+	<artifactId>springboot-aws-api-localhost</artifactId>
 	<version>${project.parent.version}</version>
-	<name>springboot-aws-api-core</name>
-	<description>Springboot AWS EBStalk API template</description>
+	<name>springboot-aws-api-localhost</name>
+	<description>Springboot AWS localhost overriding configuration</description>
 
 	<properties>
 		<java.version>12</java.version>
@@ -24,7 +24,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>2.3.3.RELEASE</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -119,16 +118,25 @@
 		</dependency>
 
 
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.16</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>com.patrikduch</groupId>
+			<artifactId>springboot-aws-api-core</artifactId>
+			<version>${app.version}</version>
+		</dependency>
+
+
 
 
 	</dependencies>
