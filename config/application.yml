@@ -1,0 +1,15 @@
+# Shared properties for all environments...
+
+port: 80
+swaggerPath: "/swagger-ui:html"
+
+production:
+  server:
+    url: "http://tepsivosafetydatabasebackend-env.eba-33ehkwmz.eu-west-1.elasticbeanstalk.com"
+    name: "Production Tepsivo BE server"
+
+development:
+  test: "Test"
+  server:
+    url: "http://localhost:80"
+    name: "Development Tepsivo BE server"

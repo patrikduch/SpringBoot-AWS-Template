@@ -1,0 +1,54 @@
+image: python:3.7.4-alpine3.10
+options:
+  docker: true
+pipelines:
+  default:
+    - step:
+        name: "Java compilation"
+        image: maven:3.6.3
+        caches:
+          - maven
+        script: # Modify the commands below to build your repository.
+          - mvn -B verify # -B batch mode makes Maven less verbose
+          - mvn clean
+          - mvn install
+          - mvn package
+        artifacts:
+          - tsdb-api/target/*.jar
+    - step:
+        name: "Docker img validation"
+        script:
+          - docker build -f Dockerfile -t docker-springboot .
+
+  branches:
+    master:
+      - step:
+          name: "Deployment preparation"
+          image: maven:3.6.3
+          caches:
+            - maven
+          script: # Modify the commands below to build your repository.
+            - mvn -B verify # -B batch mode makes Maven less verbose
+            - mvn clean install -Pproduction
+            #- mvn package -Pproduction
+          artifacts:
+            - tsdb-api/target/*.jar
+
+      - step:
+          name: "Docker image redeploy"
+          script:
+            - pip3 install awscli
+            - IMAGE=$DOCKER_REPO
+            - TAG="$BITBUCKET_BRANCH-$BITBUCKET_COMMIT"
+            - aws configure set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
+            - aws configure set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
+            - eval $(aws ecr get-login --no-include-email --region ap-${AWS_DEFAULT_REGION} | sed 's;https://;;g')
+            - docker login -u AWS -p $(aws ecr get-login-password --region ${AWS_DEFAULT_REGION}) ${DOCKER_REPO}
+            - docker build -t $IMAGE:latest .
+            - docker push $IMAGE:latest
+      - step:
+          name: "EBStalk deployment"
+          deployment: test
+          script:
+            - pip3 install awscli
+            - aws elasticbeanstalk update-environment --region ${AWS_DEFAULT_REGION} --application-name ${APPLICATION_NAME} --environment-name ${ENVIRONMENT_NAME} --version-label ${VERSION_NAME}

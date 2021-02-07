@@ -1,4 +1,4 @@
-package com.patrikduch.springboot_aws_api_core.repositories;
+package com.patrikduch.springboot_aws_api_core.interfaces.repositories;
 
 import com.patrikduch.springboot_aws_api_core.model.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
