@@ -12,4 +12,4 @@ development:
   test: "Test"
   server:
     url: "http://localhost:80"
-    name: "Development Tepsivo BE server"
+    name: "Development SpringBoot BE server"

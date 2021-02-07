@@ -1,6 +1,6 @@
-package com.patrikduch.springboot_aws_api;
+package com.patrikduch.springboot_aws_api.configs;
 
-import com.patrikduch.springboot_aws_api_core.configs.ServerConfig;
+import com.patrikduch.springboot_aws_api_core.interfaces.configs.ServerConfig;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.models.OpenAPI;

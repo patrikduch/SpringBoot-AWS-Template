@@ -45,15 +45,12 @@
 			<version>1.1.49</version>
 		</dependency>
 
-
 		<!-- Open API exposing JSON dependency -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>LATEST</version>
 		</dependency>
-
-
 
 		<!-- MongoDb dependencies -->
 		<dependency>
@@ -67,7 +64,6 @@
 			<artifactId>mongo-java-driver</artifactId>
 			<version>3.11.2</version>
 		</dependency>
-
 
 		<!-- Spring Security -->
 		<dependency>
@@ -88,7 +84,6 @@
 			<version>5.2.1.RELEASE</version>
 		</dependency>
 
-
 		<!-- JWT creation dependency  -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -102,13 +97,11 @@
 			<version>2.3.0</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.springframework.security.oauth</groupId>
 			<artifactId>spring-security-oauth2</artifactId>
 			<version>2.3.3.RELEASE</version>
 		</dependency>
-
 
 		<!-- Model mapper -->
 		<dependency>
@@ -116,7 +109,6 @@
 			<artifactId>modelmapper</artifactId>
 			<version>2.3.0</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -129,15 +121,11 @@
 			<version>1.18.16</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>com.patrikduch</groupId>
 			<artifactId>springboot-aws-api-core</artifactId>
 			<version>${app.version}</version>
 		</dependency>
-
-
-
 
 	</dependencies>
 </project>

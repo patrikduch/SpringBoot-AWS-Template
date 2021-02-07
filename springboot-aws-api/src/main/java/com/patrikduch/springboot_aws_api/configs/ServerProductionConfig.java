@@ -15,8 +15,10 @@ import org.springframework.stereotype.Service;
 public class ServerProductionConfig implements ServerConfig {
 
     @Autowired
-    private YamlProductionConfig config;
+    private YamlProductionConfig _config;
 
-
-
+    @Override
+    public String getServerUrl() throws Exception {
+        return _config.getServer().get("url");
+    }
 }

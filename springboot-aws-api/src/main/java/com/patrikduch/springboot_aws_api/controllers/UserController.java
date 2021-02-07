@@ -93,7 +93,7 @@ public class UserController {
     @GetMapping(value = "", produces = { "application/json" })
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Parameter(in = ParameterIn.HEADER, description = "Token is needed to process this request successfully.", name = "Authorization", schema = @Schema(type = "string"))
-    public ResponseEntity<List<User>> getUsers() throws BadRequestBodyException {
+    public ResponseEntity<Iterable<User>> getUsers() throws BadRequestBodyException {
 
         var entityList = _userRepository.findAll();
 

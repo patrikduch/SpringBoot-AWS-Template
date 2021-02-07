@@ -10,11 +10,16 @@ import org.springframework.stereotype.Service;
  *  Setup of server for development environment.
  * @author Patrik Duch
  */
-@Service
+
 @Profile("development")
+@Service
 public class ServerConfigDevelopment implements ServerConfig {
 
     @Autowired
     private YamlDevelopmentConfig _config;
 
+    @Override
+    public String getServerUrl() throws Exception {
+        return _config.getServer().get("url");
+    }
 }
